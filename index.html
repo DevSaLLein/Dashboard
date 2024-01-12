@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="shortcut icon" href="./styles/images/Favicon.png" type="image/x-icon/png">
+
+        <!-- Material icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    </head>
+    <body>
+
+        <nav>
+            <div>
+                <h1>eFront</h1>
+            </div>
+            <ul>
+                <li class="active">
+                    <span class="material-symbols-outlined" class="icon">grid_view</span>
+                        <p>dashboard</p>
+                </li>
+
+                <li>
+                    <ion-icon name="wallet-outline" class="icon"></ion-icon>
+                    <p>carteira</p>
+                </li>
+
+                <li>
+                    <span class="material-symbols-outlined icon">payments</span>
+                    <p>transações</p>
+                </li>
+
+                <li>
+                    <span class="material-symbols-outlined icon">support_agent</span>
+                    <p>suporte</p>
+                </li>
+
+                <hr>
+
+                <li>
+                    <ion-icon name="settings-outline" class="icon"></ion-icon>
+                    <p>ajuste</p>
+                </li>
+
+                <li id="logout" class="logout">
+                    <ion-icon name="power-outline" class="icon"></ion-icon>
+                    <p>desconectar</p>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <header>
+                <div>
+                    <h2 class="text">olá, DevSaLLein</h2> 
+                    <p class="text">aqui estão as informações sobre suas vendas</p>
+                </div>
+                <div>
+                    <ion-icon name="search-outline"></ion-icon>
+                    <ion-icon name="notifications-outline"></ion-icon>
+                    
+                    <figure>
+                        <img src="./styles/images/me.jpg" alt="foto minha">
+                        <p class="text">devSaLLein</p>
+                    </figure>
+
+                </div>
+            </header>
+        </main>
+
+        <!-- Ionicons icons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <script src="./script/script.js" DEFER></script>
+    </body>
+</html>

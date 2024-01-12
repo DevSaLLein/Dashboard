@@ -41,6 +41,7 @@ h1::first-letter {
 }
 nav {
     display: flex;
+    position: relative;
     width: 300px;
     height: 100dvh;
     flex-direction: column;
@@ -101,6 +102,14 @@ li > p {
     font-size: 24px;
 }
 
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    padding: 0px 5px;
+}
+
 /* Main */
 
 main {
@@ -115,7 +124,7 @@ main {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px
+    padding: 20px 50px
 }
 
 header div:nth-child(1) h2 {
@@ -162,6 +171,130 @@ figure > img {
     border-radius: 50%;   
 }
 
+#grid__layout {
+    display: grid;
+    height: calc(100dvh - 110px);
+
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: 240px 200px 240px;
+
+    grid-template-areas: 
+        'dashboard dashboard  historico historico'
+        'compras total vendas reembolsos'
+        'tableCompras tableCompras tableCompras tableCompras'
+    ;
+
+    justify-content: center;
+    align-content: center;
+
+    gap: 32px;
+    width: 100%;
+}
+
+#grid__layout > div {
+    padding: 18px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#grid__layout > div > h2 {
+    font-weight: 400;
+}
+
+#historico {
+    grid-area: historico;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#historico > h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+#historico > section {
+    background-color: var(--dark-30);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#historico > section > p {
+    color: var(--brand-color);
+}
+
+#historico > section > p:last-child {
+    font-weight: 700;
+}
+
+#dashboard {
+    background-color: yellow;
+    grid-area: dashboard;
+}
+
+.template_data > h2 {
+    margin-bottom: 14px;
+}
+
+.template_data > p {
+    margin-bottom: 8px;
+}
+
+.template_data > section {
+    display: flex;
+    background-color: rgba(169, 247, 169, 0.535);
+    border-radius: 10px;
+    padding: 5px 7px;
+    color: green;
+    font-weight: 500;
+    align-items: center;
+    gap:5px;
+    width: 80px
+}
+
+.template_data > h2 {
+    font-size: 20px;
+}
+
+#vendas {
+    background-color: violet;
+    grid-area: vendas;
+}
+
+#totalLiquido {
+    background-color: aquamarine;
+    grid-area: total;
+}
+
+#compras {
+    background-color: tomato;
+    grid-area: compras;
+}
+
+#reembolsos {
+    background-color: green;
+    grid-area: reembolsos;
+}
+
+#table {
+    background-color: indianred;
+    grid-area:  tableCompras;
+}
+
+
+/* Classes format */
+.text {
+    color: var(--text-color);
+}
+
 .text::first-letter {
     text-transform: capitalize;
+}
+
+.format__number {
+    font-weight: 600;
+    font-size: 24px;
 }

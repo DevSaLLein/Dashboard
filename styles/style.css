@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+
+    --brand-color: #9E6EFE;   
+
+    --dark-10: #2D3748;
+    --dark-20: #718096;
+    --dark-30: #F9F9F9;
+    --dark-40: #FFFFFF;
+
+    --support-01: #2962FF;
+    --support-02: #0BB07B;
+    --support-02: #FFCE52;
+    --support-03: #F03D3D;  
+    --support-04: #E0E0E0;
+
+    --background-logout: #f03d3d08;
+    --background-logout-hover: #f03d3d18;
+    --background-main: #F3F4F8;
+
+    --text-color: #272727;
+    --secundary-text-color: #696969;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 50px 0;
+}
+
+h1::first-letter {
+    color: var(--brand-color)
+}
+nav {
+    display: flex;
+    width: 300px;
+    height: 100dvh;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .3s ease;
+    z-index: 1;
+}
+
+li:hover {
+    background-color: var(--dark-30);
+}
+
+hr {
+    border: 1px solid var(--dark-30);
+    height: 2px;
+    width: 220px;
+    margin: 15px 0;
+}
+li > p {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.active {
+    color: var(--brand-color);
+    background-color: var(--dark-30);
+
+    transition: all .3s ease;
+}
+
+#logout {
+    color: var(--support-03);
+    background-color: var(--background-logout);
+    transition: background .3s ease;
+}
+
+#logout:hover {
+    background-color: var(--background-logout-hover);
+}
+
+.icon {
+    width: 24px;
+    font-size: 24px;
+}
+
+/* Main */
+
+main {
+    position: absolute;
+    width: calc(100% - 300px);
+    height: 100dvh;
+    background-color: var(--background-main);
+    top: 0;
+    right: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px
+}
+
+header div:nth-child(1) h2 {
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+header div:nth-child(1) p {
+    color: var(--secundary-text-color);
+    font-size: 18px;
+}
+
+header div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+header div:nth-child(2) ion-icon {
+    position: relative;
+    font-size: 24px;
+}
+
+header div:nth-child(2) ion-icon:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+figure {
+    display: flex;
+    align-items: center;
+    gap: 5px;    
+}
+
+figure > img {
+    width: 34px;
+    border-radius: 50%;   
+}
+
+.text::first-letter {
+    text-transform: capitalize;
+}

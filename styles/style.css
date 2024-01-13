@@ -10,7 +10,9 @@
 
 :root {
 
-    --brand-color: #9E6EFE;   
+    --brand-color: #9E6EFE;
+    
+    --brand-color-transparent: #9e6efe43;
 
     --dark-10: #2D3748;
     --dark-20: #718096;
@@ -233,6 +235,14 @@ figure > img {
 #dashboard {
     background-color: yellow;
     grid-area: dashboard;
+
+    position: relative;
+}
+
+#dashboard > canvas {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .template_data > h2 {

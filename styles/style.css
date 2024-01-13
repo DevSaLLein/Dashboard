@@ -10,7 +10,9 @@
 
 :root {
 
-    --brand-color: #9E6EFE;   
+    --brand-color: #9E6EFE;
+    
+    --brand-color-transparent: #9e6efe43;
 
     --dark-10: #2D3748;
     --dark-20: #718096;
@@ -179,7 +181,7 @@ figure > img {
     grid-template-rows: 240px 200px 240px;
 
     grid-template-areas: 
-        'dashboard dashboard  historico historico'
+        'dashboard dashboard historico historico'
         'compras total vendas reembolsos'
         'tableCompras tableCompras tableCompras tableCompras'
     ;
@@ -191,13 +193,13 @@ figure > img {
     width: 100%;
 }
 
-#grid__layout > div {
+#grid__layout > :is(div) {
     padding: 18px;
     border-radius: 10px;
     background-color: white;
 }
 
-#grid__layout > div > h2 {
+#grid__layout > div, canvas > h2 {
     font-weight: 400;
 }
 
@@ -233,6 +235,14 @@ figure > img {
 #dashboard {
     background-color: yellow;
     grid-area: dashboard;
+
+    position: relative;
+}
+
+#dashboard > canvas {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .template_data > h2 {
@@ -252,7 +262,7 @@ figure > img {
     font-weight: 500;
     align-items: center;
     gap:5px;
-    width: 80px
+    width: 85px
 }
 
 .template_data > h2 {
@@ -262,6 +272,11 @@ figure > img {
 #vendas {
     background-color: violet;
     grid-area: vendas;
+}
+
+#vendas > section {
+    background-color: rgba(255, 0, 0, 0.145);
+    color: red;
 }
 
 #totalLiquido {
@@ -279,11 +294,43 @@ figure > img {
     grid-area: reembolsos;
 }
 
-#table {
-    background-color: indianred;
-    grid-area:  tableCompras;
+#reembolsos section {
+    background-color: rgba(255, 0, 0, 0.145);
+    color: red;
 }
 
+#table {
+    background-color: indianred;
+    grid-area: tableCompras;
+}
+
+#table > table > tbody {
+    color: var(--secundary-text-color);
+    text-transform: capitalize;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+}
+
+thead > tr, th{
+    text-align: left;
+}
+
+tbody > tr, td {
+    border-bottom: 1px solid var(--dark-20);
+    height: 2px;
+
+}
+
+tbody > tr > td:last-child{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 100%;
+}
 
 /* Classes format */
 .text {
@@ -294,7 +341,23 @@ figure > img {
     text-transform: capitalize;
 }
 
+.first_name {
+    text-transform: capitalize;
+}
+
 .format__number {
     font-weight: 600;
     font-size: 24px;
+}
+
+.icon_situacao {
+    width: 14px;
+}
+
+.aprovado {
+    fill: #0BB07B;
+}
+
+.pendente {
+    fill: yellow;
 }

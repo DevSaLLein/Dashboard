@@ -73,7 +73,9 @@
             </header>
 
             <section id="grid__layout" class="text">
-                <div id="dashboard">dashboard</div>
+                <div id="dashboard">
+                    <canvas id="chart"></canvas>
+                </div>
 
                 <div id="historico">
                     <h2 class="text">histórico de transações</h2>
@@ -94,51 +96,89 @@
                     </section>
                 </div>
 
-                <div id="vendas" class="template_data">
-                    <h2 class="text">total de vendas</h2>
+                <div id="compras" class="template_data">
+                    <h2 class="text">compras canceladas</h2>
 
-                    <p class="format__number">R$ 8.590,23</p>
+                    <p class="format__number">R$ 50,12</p>
 
                     <section>
                         <ion-icon name="trending-up-outline"></ion-icon>
-                        <span>+ 11%</span>
+                        <span>+ 51%</span>
                     </section>
                 </div>
                 
                 <div id="totalLiquido" class="template_data">
                     <h2 class="text">total líquido</h2>
 
-                    <p class="format__number">R$ 8.590,23</p>
+                    <p class="format__number">R$ 1.412,00</p>
 
                     <section>
                         <ion-icon name="trending-up-outline"></ion-icon>
-                        <span>+ 11%</span>
+                        <span>+ 12%</span>
                     </section>
                 </div>
 
-                <div id="compras" class="template_data">
-                    <h2 class="text">compras canceladas</h2>
+                <div id="vendas" class="template_data">
+                    <h2 class="text">total de vendas</h2>
 
-                    <p class="format__number">R$ 8.590,23</p>
+                    <p class="format__number">R$ 400,23</p>
 
                     <section>
-                        <ion-icon name="trending-up-outline"></ion-icon>
-                        <span>+ 11%</span>
+                        <ion-icon name="trending-down-outline"></ion-icon>
+                        <span>- 23%</span>
                     </section>
                 </div>
 
                 <div id="reembolsos" class="template_data">
                     <h2 class="text">reembolsos</h2>
 
-                    <p class="format__number">R$ 8.590,23</p>
+                    <p class="format__number">R$ 120,23</p>
 
                     <section>
-                        <ion-icon name="trending-up-outline"></ion-icon>
-                        <span>+ 11%</span>
+                        <ion-icon name="trending-down-outline"></ion-icon>
+                        <span>- 33%</span>
                     </section>
                 </div>
 
-                <div id="table"></div>
+                <div id="table">
+                    <h2 class="text">histórico  de compradores</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th class="text">data</th>
+                                <th class="text">nome</th>
+                                <th class="text">localização</th>
+                                <th class="text">valor</th>
+                                <th class="text">situação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#123456</td>
+                                <td>02/08/2023</td>
+                                <td class="first_name">isaac lima</td>
+                                <td class="first_name">ceará</td>
+                                <td>R$ 200,00</td>
+                                <td>
+                                    <box-icon type='solid' name='circle' class="icon_situacao aprovado"></box-icon>
+                                    <p>aprovado</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#654321</td>
+                                <td>12/12/2023</td>
+                                <td class="first_name">dev saLLein</td>
+                                <td class="first_name">new york</td>
+                                <td>R$ 450,00</td>
+                                <td>
+                                    <box-icon type='solid' name='circle' class="icon_situacao pendente"></box-icon>
+                                    <p>pendente</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
 
@@ -146,6 +186,55 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-        <script src="./script/script.js" DEFER></script>
+        <!-- BoxIcons -->
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+        <script src="./script/script.js" type="module"></script>
+
+        <!-- ChartJS -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+        <script>
+
+            let dasboard = document.querySelector('#chart');
+
+            new Chart(dasboard, {
+                type: 'bar',
+                data: {
+                labels: ['Jan', 'Fev', 'Mac', 'Maio', 'Abril', 'Jun', 'Jul'],
+                datasets: [{
+                    label: '',
+                    data: [500, 880, 1470, 1170, 1690, 1930, 880],
+                    backgroundColor: [
+                        '#9e6efe43'
+                    ],
+                    hoverBackgroundColor: ['#9E6EFE'],
+                    borderRadius: 10,
+                    borderWidth: 1,
+                    grouped: false
+                }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true,
+                        grid: {
+                            offset: false
+                            }
+                        },
+                    },
+
+                    plugins: {
+                        title:{
+                            display: true,
+                            text: 'Gráfico de receitas',
+                            align: 'start',
+                            font: {size: '20px', weight: '500'},
+                            color: '#272727'
+                        }
+                    },
+                }
+            });
+        </script>
     </body>
 </html>

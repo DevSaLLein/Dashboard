@@ -413,6 +413,10 @@ tbody > tr > td:last-child{
         z-index: 1;
     } 
 
+    html {
+        overflow-y: hidden;
+    }
+
     nav.menuActive ul li.active {
         color: var(--brand-color);
         background-color: var(--brand-color-transparent);
@@ -527,7 +531,6 @@ tbody > tr > td:last-child{
         height: auto;
 
         overflow-x: scroll;
-
     }
 
     tbody > tr > td:last-child{
@@ -537,8 +540,11 @@ tbody > tr > td:last-child{
         height: 50px;
     }
 
-
     #table > h2 {
         font-size: 20px;
+    }
+
+    footer {
+        display: none;
     }
 }

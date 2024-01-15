@@ -186,7 +186,7 @@ figure > img {
     height: calc(100dvh - 110px);
 
     grid-template-columns: repeat(4, 300px);
-    grid-template-rows: 240px 200px 240px;
+    grid-template-rows: 240px 170px 240px;
 
     grid-template-areas: 
         'dashboard dashboard historico historico'
@@ -403,8 +403,6 @@ tbody > tr > td:last-child{
         overflow-x: hidden;
 
         transition: all .3s ease;
-
-        margin-bottom: 24px;
     }
     
     nav.menuActive {

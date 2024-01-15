@@ -403,6 +403,8 @@ tbody > tr > td:last-child{
         overflow-x: hidden;
 
         transition: all .3s ease;
+
+        margin-bottom: 24px;
     }
     
     nav.menuActive {

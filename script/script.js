@@ -24,3 +24,13 @@ listArray.forEach(li => {
         }
     })
 })
+
+const menu = document.querySelector('button');
+
+const toggleMenu = () => {
+    const nav = document.querySelector('nav');
+
+    nav.classList.toggle('menuActive');
+}
+
+menu.addEventListener('click', toggleMenu);

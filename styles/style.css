@@ -12,7 +12,7 @@
 
     --brand-color: #9E6EFE;
     
-    --brand-color-transparent: #9e6efe43;
+    --brand-color-transparent: #9E6EFE3D;
 
     --dark-10: #2D3748;
     --dark-20: #718096;
@@ -41,6 +41,7 @@ h1 {
 h1::first-letter {
     color: var(--brand-color)
 }
+
 nav {
     display: flex;
     position: relative;
@@ -68,7 +69,8 @@ li {
 }
 
 li:hover {
-    background-color: var(--dark-30);
+    background-color: var(--brand-color-transparent);
+    color: var(--brand-color)
 }
 
 hr {
@@ -84,7 +86,7 @@ li > p {
 
 .active {
     color: var(--brand-color);
-    background-color: var(--dark-30);
+    background-color: var(--brand-color-transparent);
 
     transition: all .3s ease;
 }
@@ -129,6 +131,7 @@ header {
     padding: 20px 50px
 }
 
+
 header div:nth-child(1) h2 {
     color: var(--text-color);
     font-size: 28px;
@@ -146,12 +149,18 @@ header div:nth-child(2) {
     gap: 24px;
 }
 
-header div:nth-child(2) ion-icon {
+header div:nth-child(2) section {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+header div:nth-child(2) section ion-icon {
     position: relative;
     font-size: 24px;
 }
 
-header div:nth-child(2) ion-icon:nth-child(2)::before {
+header div:nth-child(2) section ion-icon:nth-child(2)::before {
     content: '';
     position: absolute;
     right: 0;
@@ -235,7 +244,6 @@ figure > img {
 #dashboard {
     background-color: yellow;
     grid-area: dashboard;
-
     position: relative;
 }
 
@@ -360,4 +368,177 @@ tbody > tr > td:last-child{
 
 .pendente {
     fill: yellow;
+}
+
+@media only screen and (max-width: 680px){
+
+    .active {
+        color: currentColor;
+        background-color: transparent;
+    
+        transition: none;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 20px 0;
+    }
+
+
+    nav {
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        visibility: hidden;
+
+        top: 0;
+        left: 0;
+        
+        height: 100dvh;
+        width: 0;
+        background-color: white;
+
+        height: 100dvh;
+        overflow-x: hidden;
+
+        transition: all .3s ease;
+    }
+    
+    nav.menuActive {
+        width: 100%;
+        visibility: visible;
+        z-index: 1;
+    } 
+
+    nav.menuActive ul li.active {
+        color: var(--brand-color);
+        background-color: var(--brand-color-transparent);
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        width: 80%;
+        align-items: center;
+    }
+    
+    li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 17px 100px;
+        flex-grow: 1;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background .3s ease;
+        z-index: 1;
+    }
+
+    header > div > section > button {
+        display: flex;
+        padding: .6rem .5rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+        border-radius: 5px;
+    }
+
+    button > span {
+        width: 20px;
+        border-top: 2px solid;
+
+        z-index: 2;
+    }
+
+    button > span::after, button > span::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+    }
+
+    main {
+        width: 100%;
+        position: block;
+        height:auto;
+    }
+
+    #grid__layout {
+        grid-template-columns: 80%;
+
+        grid-template-areas: 
+            'dashboard'
+            'historico'
+            'compras' 
+            'total' 
+            'vendas'
+            'reembolsos'
+            'tableCompras'
+        ;
+
+        margin-top: 600px;
+    }
+
+    header {
+        flex-direction: column-reverse;
+        padding: 20px 24px;
+        gap: 24px
+    }
+
+    header > div:nth-child(2) {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    figure > p {
+        display: none;
+    }
+
+    figure > img {
+        margin-left: 16px;
+    }
+
+    #historico {
+        grid-area: historico;    
+        gap: 10px;
+    }
+    
+    #historico > h2 {
+        margin-bottom: 2px;
+    }
+    
+    #historico > section {
+        padding: 5px;
+    }
+
+    table {
+
+        display: block;
+        width: 100%;
+        height: auto;
+
+        overflow-x: scroll;
+
+    }
+
+    tbody > tr > td:last-child{
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        height: 50px;
+    }
+
+
+    #table > h2 {
+        font-size: 20px;
+    }
 }

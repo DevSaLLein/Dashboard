@@ -29,8 +29,13 @@ const menu = document.querySelector('button');
 
 const toggleMenu = () => {
     const nav = document.querySelector('nav');
+    const html = document.querySelector('html');
 
     nav.classList.toggle('menuActive');
+
+    const menuActive = nav.classList.contains('menuActive');
+
+    menuActive ? html.style.overflowY = 'hidden' : html.style.overflowY = 'auto';
 }
 
 menu.addEventListener('click', toggleMenu);

@@ -70,7 +70,7 @@ li {
 
 li:hover {
     background-color: var(--brand-color-transparent);
-    color: var(--brand-color)
+    color: var(--brand-color);
 }
 
 hr {
@@ -84,9 +84,16 @@ li > p {
     text-transform: uppercase;
 }
 
-.active {
+/* .active {
     color: var(--brand-color);
     background-color: var(--brand-color-transparent);
+
+    transition: all .3s ease;
+} */
+
+.active {
+    color: var(--brand-color);
+    background-color: var(--background-main);
 
     transition: all .3s ease;
 }
@@ -185,7 +192,7 @@ figure > img {
     display: grid;
     height: calc(100dvh - 110px);
 
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(auto-fill, 300px);
     grid-template-rows: 240px 170px 240px;
 
     grid-template-areas: 
@@ -198,7 +205,7 @@ figure > img {
     align-content: center;
 
     gap: 32px;
-    width: 100%;
+    width: auto;
 }
 
 #grid__layout > :is(div) {
@@ -367,6 +374,37 @@ tbody > tr > td:last-child{
 
 .pendente {
     fill: yellow;
+}
+
+@media (max-width: 1025px) {
+
+    nav {
+        width: 300px;
+    }
+
+    main {
+        padding: 20px;
+        width: calc(100% - 300px);
+    }
+
+    #grid__layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        margin-bottom: 290px;
+    }
+
+    #dashboard  {
+        position: block;
+        margin: 300px 0;
+    }
+
+    #dashboard > canvas {
+        background-color: white;
+    }
+    
 }
 
 @media only screen and (max-width: 680px){
